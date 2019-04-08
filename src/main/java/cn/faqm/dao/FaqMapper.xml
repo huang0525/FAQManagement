@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.faqm.dao.FaqMapper">
+
+    <!--用于查询所有的faqm项目-->
+    <select id="queryAllFaqsPro" resultType="Classes">
+        SELECT `id``cname` FROM `classes`
+    </select>
+
+    <!--根据项目编号查询faqm项目的详情列表信息。-->
+    <select id="queryAllFaqsList" resultType="Faqs">
+
+    </select>
+
+    <insert id="addFaq" parameterType="Faqs">
+        INSERT INTO  `faqmanagement`.`faqs`
+            (`id`,`title`,`createDate`,`content`,`classId`)
+        VALUES(#{id},#{title},#{createDate},#{content},#{classId})
+
+    </insert>
+</mapper>
